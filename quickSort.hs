@@ -3,7 +3,7 @@ Author  : Pieter van Wyk
 Created : 2020-12-02
 Updated : 2020-12-02
 
-Implimentation of quick sort
+Implementation of quick sort
 -}
 
 import Test.QuickCheck
@@ -11,6 +11,7 @@ import Test.QuickCheck
 -- Main Functions --
 --------------------
 
+-- sorting list with quick sort algorithm
 qsort :: Ord a => [a] -> [a]
 qsort [] = []
 qsort (x:xs) = qsort small ++ [x] ++ qsort large
