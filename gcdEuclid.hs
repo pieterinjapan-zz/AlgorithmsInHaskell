@@ -3,7 +3,7 @@ Author  : Pieter van Wyk
 Created : 2020-12-02
 Updated : 2020-12-02
 
-Implimentation of Extended Euclid Algorithm
+Implementation of Extended Euclid Algorithm
 -}
 
 import Test.QuickCheck
