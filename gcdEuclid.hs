@@ -1,4 +1,15 @@
+{-
+Author  : Pieter van Wyk
+Created : 2020-12-02
+Updated : 2020-12-02
+
+Implimentation of Extended Euclid Algorithm
+-}
+
 import Test.QuickCheck
+
+-- Main Functions --
+--------------------
 
 -- extended Euclid algorithm implimentation.
 -- returns gcd as well as certificate x,y
@@ -7,6 +18,9 @@ extended_gcd :: Int -> Int -> (Int, Int, Int)
 extended_gcd a 0 = (a, 1, 0)
 extended_gcd a b = let (d, p, q) = extended_gcd b (mod a b)
                    in (d, q, p - q * (div a b))
+
+-- Unit Tests --
+----------------
 
 -- test helper function 1
 -- isolated calculation of gcd
@@ -22,10 +36,7 @@ cert :: Int -> Int -> (Int, Int)
 cert a 0 = (1,0)
 cert a b = (q, p - (div a b)*q)
  where (p,q) = cert b (mod a b)
-
--- Unit Tests
--------------
-
+ 
 prop_gcd_00 :: Int -> Int -> Bool
 prop_gcd_00 a b = gcdE a' b' == d
   where a' = abs a
