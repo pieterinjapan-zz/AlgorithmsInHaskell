@@ -1,7 +1,7 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-02
-Updated : 2020-12-02
+Updated : 2020-12-04
 
 Implementation of insert sort
 -}
@@ -21,7 +21,6 @@ insert x (l:ls) | x > l = l : (insert x ls)
 insertSort :: Ord a => [a] -> [a]
 insertSort [] = []
 insertSort (l:ls) = insert l (insertSort ls)
-
 
 -- Unit Tests --
 ----------------
