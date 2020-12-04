@@ -51,7 +51,7 @@ prop_msort_00 xs ys = isSorted (merge xs' ys')
   where xs' = mergeSort xs
         ys' = mergeSort ys
 
--- check if sorted list is sorted after merge sort
+-- check if list is sorted after mergeSort
 prop_msort_01 :: [Int] -> Bool
 prop_msort_01 = prop_sort mergeSort
 
