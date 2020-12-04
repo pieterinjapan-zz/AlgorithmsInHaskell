@@ -1,7 +1,7 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-02
-Updated : 2020-12-02
+Updated : 2020-12-04
 
 Implementation of quick sort
 -}
@@ -17,7 +17,6 @@ qsort [] = []
 qsort (x:xs) = qsort small ++ [x] ++ qsort large
  where small = [a | a <- xs, a <= x]
        large = [a | a <- xs, a >  x]
-
 
 -- Unit Tests --
 ----------------
