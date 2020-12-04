@@ -1,7 +1,7 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-02
-Updated : 2020-12-02
+Updated : 2020-12-04
 
 Implementation of merge sort
 -}
@@ -11,14 +11,14 @@ import Test.QuickCheck
 -- Main Functions --
 --------------------
 
--- merge two sorted lists into one sorted list :
+-- merge two sorted lists into one sorted list 
 merge :: Ord a => [a] -> [a] -> [a]
 merge xs [] = xs
 merge [] ys = ys
 merge (x:xs) (y:ys) | x < y     = x : ( merge xs (y:ys) )
                     | otherwise = y : ( merge (x:xs) ys )
 
--- sort list using mergesort algorithm :
+-- sort list using mergesort algorithm 
 mergeSort :: Ord a => [a] -> [a]
 mergeSort [] = []
 mergeSort [x] = [x]
