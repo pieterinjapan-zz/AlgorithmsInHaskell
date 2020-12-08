@@ -3,7 +3,7 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-08
 
-Unit tests for merge sort
+Unit tests for merge sort algorithm
 -}
 import Test.QuickCheck
 import MergeSort
