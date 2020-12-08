@@ -3,7 +3,7 @@ Author  : Pieter van Wyk
 Created : 2020-12-02
 Updated : 2020-12-08
 
-Implimentation of insert sort
+Implimentation of insert sort algorithm
 -}
 module InsertSort where
 
