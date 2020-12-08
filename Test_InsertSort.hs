@@ -1,9 +1,9 @@
 {-
 Author  : Pieter van Wyk
-Created : 2020-12-02
-Updated : 2020-12-02
+Created : 2020-12-08
+Updated : 2020-12-08
 
-Unit tests for insert sort
+Unit tests for insert sort algorithm
 -}
 import InsertSort
 import Test.QuickCheck
