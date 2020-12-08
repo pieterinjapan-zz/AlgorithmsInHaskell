@@ -27,11 +27,11 @@ isSorted xs = case xs of
 prop_sort :: ([Int] -> [Int]) -> [Int] -> Bool
 prop_sort sort_f = isSorted . sort_f
 
--- check if sorted list is sorted after insert
+-- check if list remains sorted after insert
 prop_insert_00 :: Int -> [Int] -> Bool
 prop_insert_00 x xs = isSorted $ insert x (insertSort xs)
 
--- check if sorted list is sorted after insert
+-- check if list is sorted after insertSort
 prop_insert_01 :: [Int] -> Bool
 prop_insert_01 = prop_sort insertSort
 
