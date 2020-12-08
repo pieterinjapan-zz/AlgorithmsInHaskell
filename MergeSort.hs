@@ -3,9 +3,9 @@ Author  : Pieter van Wyk
 Created : 2020-12-02
 Updated : 2020-12-04
 
-Implementation of merge sort
+Implementation of merge sort algorithm
 -}
-
+module MergeSort where
 import Test.QuickCheck
 
 -- Main Functions --
