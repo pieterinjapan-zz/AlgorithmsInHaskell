@@ -3,7 +3,7 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-08
 
-Implementation of binary earch algorithm
+Implementation of binary search algorithm
 -}
 module BinarySearch where
 
