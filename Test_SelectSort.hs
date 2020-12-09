@@ -3,14 +3,14 @@ Author  : Pieter van Wyk
 Created : 2020-12-02
 Updated : 2020-12-09
 
-Unit tests for selection sort algorithm
+Property tests for selection sort algorithm
 -}
 import SelectSort
 import TestSortModule
 import Test.QuickCheck
 
--- Unit Tests --
-----------------
+-- Property Tests --
+--------------------
 
 -- opperating swap twice should give back the original list
 prop_select_00 :: Int -> Int -> Int -> Int -> [Int] -> Bool

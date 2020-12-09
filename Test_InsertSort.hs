@@ -3,14 +3,14 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-09
 
-Unit tests for insert sort algorithm
+Property tests for insert sort algorithm
 -}
 import InsertSort
 import TestSortModule
 import Test.QuickCheck
 
--- Unit Tests --
-----------------
+-- Property Tests --
+--------------------
 
 -- check if list remains sorted after insert
 prop_insert_00 :: Int -> [Int] -> Bool

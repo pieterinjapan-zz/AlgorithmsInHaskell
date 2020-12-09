@@ -3,14 +3,14 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-08
 
-Implementation of binary search algorithm
+Property tests for binary search algorithm
 -}
 import Test.QuickCheck
 import MergeSort
 import BinarySearch
 
--- Unit Tests --
-----------------
+-- Property Tests --
+--------------------
 
 -- element inserted at given index is found at that index
 prop_binary_00 :: Int -> [Int] -> Bool

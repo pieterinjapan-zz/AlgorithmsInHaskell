@@ -3,13 +3,13 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-08
 
-Unit tests of extended Euclid algorithm
+Property tests of extended Euclid algorithm
 -}
 import GCDEuclid
 import Test.QuickCheck
 
--- Unit Tests --
-----------------
+-- Property Tests --
+--------------------
 
 -- test helper function 1
 -- isolated calculation of gcd

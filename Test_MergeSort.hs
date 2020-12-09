@@ -3,14 +3,14 @@ Author  : Pieter van Wyk
 Created : 2020-12-08
 Updated : 2020-12-09
 
-Unit tests for merge sort algorithm
+Property tests for merge sort algorithm
 -}
 import MergeSort
 import TestSortModule
 import Test.QuickCheck
 
--- Unit Tests --
-----------------
+-- Property Tests --
+--------------------
 
 -- check if merging two sorted lists gives a sorted list
 prop_msort_00 :: [Int] -> [Int] -> Bool
