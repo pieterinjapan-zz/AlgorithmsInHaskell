@@ -1,7 +1,7 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-02
-Updated : 2020-12-04
+Updated : 2020-12-09
 
 Implementation of quick sort
 -}
