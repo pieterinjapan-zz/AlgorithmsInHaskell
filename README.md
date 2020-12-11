@@ -2,12 +2,12 @@
 Implementations of various algorithms in Haskell,
 including property-based tests for helper and main functions.
 
-# Sorting Algorithms
+## Sorting Algorithms
 insert sort, selection sort, quick sort, merge sort
 
-# Search Algorithms
+## Search Algorithms
 binary search
 
-# Numerical Algorithms
+## Numerical Algorithms
 extended Euclid's algorithm, solver for linear Diophantine equation, solver for simultaneous congruence equations
 
