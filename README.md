@@ -14,5 +14,5 @@ including property-based tests for helper and main functions.
 ## Numerical Algorithms
 * extended Euclid's algorithm
 * solver for linear Diophantine equation
-* solver for simultaneous congruence equations
+* solver for simultaneous congruence equations (Chinese Remainder Theorem)
 
