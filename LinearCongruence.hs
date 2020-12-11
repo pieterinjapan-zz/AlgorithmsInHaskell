@@ -1,7 +1,7 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-09
-Updated : 2020-12-10
+Updated : 2020-12-11
 
 Implimentation of algorithm for solving set of
 linear congruence equations of the form n = r_a (mod a),
