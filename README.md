@@ -9,8 +9,10 @@ including property-based tests for helper and main functions.
 * merge sort
 
 ## Search Algorithms
-binary search
+* binary search
 
 ## Numerical Algorithms
-extended Euclid's algorithm, solver for linear Diophantine equation, solver for simultaneous congruence equations
+* extended Euclid's algorithm
+* solver for linear Diophantine equation
+* solver for simultaneous congruence equations
 
