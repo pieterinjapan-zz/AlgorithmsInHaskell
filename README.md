@@ -3,7 +3,10 @@ Implementations of various algorithms in Haskell,
 including property-based tests for helper and main functions.
 
 ## Sorting Algorithms
-insert sort, selection sort, quick sort, merge sort
+*insert sort 
+*selection sort 
+*quick sort 
+*merge sort
 
 ## Search Algorithms
 binary search
