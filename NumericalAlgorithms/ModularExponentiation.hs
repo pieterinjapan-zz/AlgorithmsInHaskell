@@ -31,11 +31,10 @@ squareMod b k m = let aux = squareMod b (k - 1) m
 -- fast modular exponentiation using externally defined binary representation
 modPowBinary :: Integer -> Integer -> Integer -> Integer
 modPowBinary _ 0 m = mod 1 m
-modPowBinary b e m = aux binary_e 1
+modPowBinary b e m = foldl aux 1 binary_e
   where binary_e = intToBinary e
-        aux [] acc = acc
-        aux ((fac,k):ps) acc | fac == One = mod (aux ps (acc * squareMod b k m)) m
-                             | otherwise = mod (aux ps acc) m
+        aux v (fac,k) | fac == One = mod (v * squareMod b k m) m
+                      | otherwise = mod v m
 
 -- fast modular exponentiation using internally defined binary representation
 modPowBinary' :: Integer -> Integer -> Integer -> Integer
