@@ -8,6 +8,25 @@ Implimentation of fast modular exponentiation algorithm
 module ModularExponentiation where
 import BinaryRepresentation
 
+-- Helper Functions --
+----------------------
+
+-- for given integers b and k, compute b^(2^k) modular to m
+squareMod :: Integer -> Integer -> Integer -> Integer
+squareMod b 0 m = mod b m
+squareMod b k m = let aux = squareMod b (k - 1) m
+                  in mod (aux * aux) m
+
+-- test if a given integer is prime
+isPrime n | n <= 1 = False
+          | otherwise = aux test_nums
+  where sqrt_n = floor $ sqrt (fromIntegral n)
+        test_nums = [2 .. sqrt_n]
+        aux [] = True
+        aux (test_num:test_nums) | mod n test_num == 0 = False
+                                 | otherwise = let test_nums' = filter (\x -> mod x test_num /= 0) test_nums
+                                               in aux test_nums'
+
 -- Main Functions --
 --------------------
 
@@ -21,12 +40,6 @@ modPow b e m | even e = even_pow
         even_pow = modPow sqr_b (div e 2) m
 
 -- 2) algorithm using binary representation and squaring
-
--- for given integers b and k, compute b^(2^k) modular to m
-squareMod :: Integer -> Integer -> Integer -> Integer
-squareMod b 0 m = mod b m
-squareMod b k m = let aux = squareMod b (k - 1) m
-                  in mod (aux * aux) m
 
 -- fast modular exponentiation using externally defined binary representation
 modPowBinary :: Integer -> Integer -> Integer -> Integer
