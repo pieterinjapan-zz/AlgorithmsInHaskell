@@ -1,12 +1,13 @@
 {-
 Author  : Pieter van Wyk
 Created : 2020-12-14
-Updated : 2020-12-15
+Updated : 2020-12-18
 
 Implimentation of fast modular exponentiation algorithm
 -}
 module ModularExponentiation where
 import BinaryRepresentation
+import PrimeNumbers
 
 -- Helper Functions --
 ----------------------
@@ -17,15 +18,11 @@ squareMod b 0 m = mod b m
 squareMod b k m = let aux = squareMod b (k - 1) m
                   in mod (aux * aux) m
 
--- test if a given integer is prime
-isPrime n | n <= 1 = False
-          | otherwise = aux test_nums
-  where sqrt_n = floor $ sqrt (fromIntegral n)
-        test_nums = [2 .. sqrt_n]
-        aux [] = True
-        aux (test_num:test_nums) | mod n test_num == 0 = False
-                                 | otherwise = let test_nums' = filter (\x -> mod x test_num /= 0) test_nums
-                                               in aux test_nums'
+-- calculate exponentiation modular to prime number p
+-- using Fermat's little theorem
+modPowPrime b e p | e' == 0 || e' == e = modPowBinary' b e p
+                  | otherwise = modPowBinary' b (mod e (p - 1)) p
+  where e' = (mod e (p - 1))
 
 -- Main Functions --
 --------------------
@@ -43,8 +40,9 @@ modPow b e m | even e = even_pow
 
 -- fast modular exponentiation using externally defined binary representation
 modPowBinary :: Integer -> Integer -> Integer -> Integer
-modPowBinary _ 0 m = mod 1 m
-modPowBinary b e m = foldl aux 1 binary_e
+modPowBinary b e m | e == 0 = mod 1 m
+                   | isPrime m = modPowPrime b e m
+                   | otherwise = foldl aux 1 binary_e
   where binary_e = intToBinary e
         aux v (fac,k) | fac == One = mod (v * squareMod b k m) m
                       | otherwise = mod v m
