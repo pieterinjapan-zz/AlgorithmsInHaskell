@@ -18,11 +18,6 @@ squareMod b 0 m = mod b m
 squareMod b k m = let aux = squareMod b (k - 1) m
                   in mod (aux * aux) m
 
--- calculate exponentiation modular to prime number p
--- using Fermat's little theorem
-modPowPrime b e p | e' == 0 || e' == e = modPowBinary' b e p
-                  | otherwise = modPowBinary' b (mod e (p - 1)) p
-  where e' = (mod e (p - 1))
 
 -- Main Functions --
 --------------------
@@ -41,7 +36,6 @@ modPow b e m | even e = even_pow
 -- fast modular exponentiation using externally defined binary representation
 modPowBinary :: Integer -> Integer -> Integer -> Integer
 modPowBinary b e m | e == 0 = mod 1 m
-                   | isPrime m = modPowPrime b e m
                    | otherwise = foldl aux 1 binary_e
   where binary_e = intToBinary e
         aux v (fac,k) | fac == One = mod (v * squareMod b k m) m
@@ -56,5 +50,11 @@ modPowBinary' b e m = aux e base 1
         aux e k acc = if div e (2^k) == 1
                           then mod (aux (e - 2^k) (k - 1) (acc * squareMod b k m)) m
                           else mod (aux e (k - 1) acc) m
+
+-- fast modular exponentiantion using binary representation,
+-- and Fermat's little theorem for prime numbers
+modPowPrime b e p | e' == 0 || e' == e = modPowBinary b e p
+                  | otherwise = modPowBinary b (mod e (p - 1)) p
+  where e' = (mod e (p - 1))
 
 -- END
