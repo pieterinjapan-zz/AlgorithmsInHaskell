@@ -15,5 +15,9 @@ import Test.QuickCheck
 -- check if list is sorted after quick sort
 prop_quick_00 = prop_sort qsort
 
+-- check if list is sorted after quick sort (using foldr)
+prop_quick_01 = prop_sort qsortFold
+
 main = do
   quickCheck (withMaxSuccess 10000 prop_quick_00)
+  quickCheck (withMaxSuccess 10000 prop_quick_01)
