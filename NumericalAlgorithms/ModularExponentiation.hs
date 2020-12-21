@@ -18,7 +18,6 @@ squareMod b 0 m = mod b m
 squareMod b k m = let aux = squareMod b (k - 1) m
                   in mod (aux * aux) m
 
-
 -- Main Functions --
 --------------------
 
