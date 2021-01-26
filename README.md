@@ -3,9 +3,9 @@ Implementations of various algorithms in Haskell,
 including property-based tests for helper and main functions.
 
 ## Sorting Algorithms
-* insert sort 
-* selection sort 
-* quick sort 
+* insert sort
+* selection sort
+* quick sort
 * merge sort
 
 ## Search Algorithms
@@ -15,6 +15,6 @@ including property-based tests for helper and main functions.
 * extended Euclid's algorithm
 * solver for linear Diophantine equation
 * solver for simultaneous congruence equations (Chinese Remainder Theorem)
-* binary representation converter 
+* binary representation converter
 * fast modular exponentiation
-
+* primality checker
